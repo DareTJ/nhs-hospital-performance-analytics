@@ -45,4 +45,4 @@ I reconciled **4,751** rows and all **432** monthly provider-to-England measure 
 | [assets/powerbi](assets/powerbi) | Seven full-page report exports |
 | [docs](docs) | Source manifest, technical setup, methodology and acceptance evidence |
 
-[Reproduction steps](docs/reproduce.md) · [Script and business-question audit](docs/project_audit.md) · [Interview walkthrough](docs/interview_study_guide.md) · [GitHub release review](docs/github_release_review.md)
+[Reproduction steps](docs/reproduce.md) · [Script and business-question audit](docs/project_audit.md) · [Technical walkthrough](docs/interview_study_guide.md) · [GitHub release review](docs/github_release_review.md)
