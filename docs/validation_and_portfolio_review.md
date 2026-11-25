@@ -74,4 +74,4 @@ I score each criterion as points earned out of its assigned weight. I reserve fu
 | Portfolio presentation and interview readiness | 4/5 | README, role comparison and practical study materials | Confirm publication rights and initialise or locate the intended Git repository before release. |
 | **Total** | **85/100** | **Verified local analytics and Power BI report** | **SQL cutover and release gates remain.** |
 
-I used AI assistance to review the project, write and check changes, compare live data with files and draft documentation. The figures above come from executed reads and Desktop observations. The code and acceptance steps are available to reproduce and explain independently.
+The figures above come from read-only SQL queries and Power BI Desktop checks. The SQL scripts and acceptance steps give readers a way to reproduce the results.

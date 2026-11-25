@@ -36,5 +36,3 @@ I built an NHS A&E performance portfolio to answer how demand, four-hour perform
 - Identify the highest comparable-provider 12-hour DTA burden, then find a provider with the largest change among the reviewed rows and explain how those priorities differ.
 
 The [audit](project_audit.md) gives the purpose of every SQL script. The [methodology](reporting_methodology.md) documents the findings and evidence limits.
-
-AI assisted with code review, implementation, reconciliation and documentation. The source data and scripts are available to reproduce the checks.
