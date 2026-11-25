@@ -1,0 +1,146 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "00000000000000000066",
+  "displayName": "A&E Demand & Activity",
+  "displayOption": "FitToPage",
+  "height": 974,
+  "width": 1440,
+  "visualInteractions": [
+    {
+      "source": "00000000000000004e23",
+      "target": "00000000000000004e25",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e23",
+      "target": "00000000000000004e26",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e23",
+      "target": "00000000000000004e27",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e23",
+      "target": "00000000000000004e28",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e23",
+      "target": "00000000000000004e29",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e24",
+      "target": "00000000000000004e25",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e24",
+      "target": "00000000000000004e26",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e24",
+      "target": "00000000000000004e27",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e24",
+      "target": "00000000000000004e28",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e24",
+      "target": "00000000000000004e29",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000004e28",
+      "target": "00000000000000004e23",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e28",
+      "target": "00000000000000004e24",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e28",
+      "target": "00000000000000004e25",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e28",
+      "target": "00000000000000004e26",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e28",
+      "target": "00000000000000004e27",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e28",
+      "target": "00000000000000004e29",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e29",
+      "target": "00000000000000004e23",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e29",
+      "target": "00000000000000004e24",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e29",
+      "target": "00000000000000004e25",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e29",
+      "target": "00000000000000004e26",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e29",
+      "target": "00000000000000004e27",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000004e29",
+      "target": "00000000000000004e28",
+      "type": "NoFilter"
+    }
+  ],
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F5F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

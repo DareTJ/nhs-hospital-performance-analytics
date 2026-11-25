@@ -1,0 +1,16 @@
+.venv/
+.venv313/
+__pycache__/
+*.pyc
+*.bak
+**/.pbi/
+logs/
+
+# Local configuration, database files and Power BI exports
+.env
+.env.*
+*.local
+*.mdf
+*.ndf
+*.ldf
+*.pbix

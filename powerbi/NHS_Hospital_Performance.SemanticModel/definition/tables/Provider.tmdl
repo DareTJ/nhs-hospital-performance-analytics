@@ -1,0 +1,220 @@
+table Provider
+	lineageTag: a217dd73-1fce-4782-aa4d-34e361538322
+
+	measure 'Type 1 attendances' = SUM(Provider[type1_attendances])
+		formatString: #,0
+		lineageTag: 55fb543e-827b-4e5d-b03f-613e25cd74a2
+
+	measure 'Type 2 attendances' = SUM(Provider[type2_attendances])
+		formatString: #,0
+		lineageTag: 04c1627f-b72a-4668-8b3e-8a85f5c0f972
+
+	measure 'Other attendances' = SUM(Provider[other_attendances])
+		formatString: #,0
+		lineageTag: 37c26b72-df8d-4b78-8e47-2441a8896c69
+
+	measure 'Type 1 over four hours' = SUM(Provider[type1_over4hrs])
+		formatString: #,0
+		lineageTag: 784b8ec2-6264-4858-ac6c-780e1e529810
+
+	measure 'Type 1 admissions' = SUM(Provider[type1_admissions])
+		formatString: #,0
+		lineageTag: a16a0f9d-cdcc-4d4f-be23-dcd18480b1f7
+
+	measure 'DTA 4 to 12 hours' = SUM(Provider[dta_4_to_12hrs])
+		formatString: #,0
+		lineageTag: 9d307059-0420-4a0e-89cf-be6da197b34f
+
+	measure 'DTA 12 hours or more' = SUM(Provider[dta_12plus_hrs])
+		formatString: #,0
+		lineageTag: ca93ba09-632b-44a7-9161-606607041218
+
+	measure 'Booked Type 1 attendances' = SUM(Provider[type1_booked])
+		formatString: #,0
+		lineageTag: 6ba3238c-1d03-4cba-a117-27312d03d085
+
+	measure 'Type 1 within four hours' = DIVIDE([Type 1 attendances] - [Type 1 over four hours], [Type 1 attendances])
+		formatString: 0.00%
+		lineageTag: 535329db-c887-4cb5-b420-27ec9e707c10
+
+	measure 'Published England Type 1 attendances' = SUM(England[type1_attendances])
+		formatString: #,0
+		lineageTag: 474b80c1-f5a2-4b4c-8af1-d5ce7aa5d94a
+
+	measure 'Published England Type 1 over four hours' = SUM(England[type1_over4hrs])
+		formatString: #,0
+		lineageTag: 9e245d1a-23ef-4985-a383-4a5824f92f7e
+
+	measure 'Published England within four hours' = DIVIDE([Published England Type 1 attendances] - [Published England Type 1 over four hours], [Published England Type 1 attendances])
+		formatString: 0.00%
+		lineageTag: 69b38647-df17-48ca-987c-aeb1d1738edf
+
+	measure 'Published England DTA 12 hours or more' = SUM(England[dta_12plus_hrs])
+		formatString: #,0
+		lineageTag: f4ce167f-9be6-4e69-b874-7af54c1f4760
+
+	measure 'Gap to England (pp)' = VAR localRate = [Type 1 within four hours] VAR englandRate = [Published England within four hours] RETURN IF(NOT ISBLANK(localRate) && NOT ISBLANK(englandRate), 100 * (localRate - englandRate))
+		formatString: +0.00;-0.00;0.00
+		lineageTag: c895acca-b042-48be-8fae-2a6c7b34fc4b
+
+	measure 'Reported months' = DISTINCTCOUNT(Provider[reporting_month])
+		formatString: #,0
+		lineageTag: cfc937e8-a44f-47a8-b062-8d9e94a47def
+
+	measure 'DTA 12 hours or more per reporting day' = VAR reported = VALUES(Provider[reporting_month]) RETURN DIVIDE([DTA 12 hours or more], SUMX(reported, DAY(EOMONTH(Provider[reporting_month], 0))))
+		formatString: 0.0
+		lineageTag: 80f87290-5720-422f-82f0-87b81538cdfd
+
+	measure 'Adjusted Bristol within four hours' = VAR visits = CALCULATE([Type 1 attendances], REMOVEFILTERS(Organisation), Provider[provider_key] IN {"RA7-PRE", "RVJ", "RA7"}) VAR breaches = CALCULATE([Type 1 over four hours], REMOVEFILTERS(Organisation), Provider[provider_key] IN {"RA7-PRE", "RVJ", "RA7"}) RETURN DIVIDE(visits - breaches, visits)
+		formatString: 0.00%
+		lineageTag: 3e36eefb-9e0e-45a8-9d0e-b39a8fac0410
+
+	measure 'England all A&E attendances' = SUMX(England, England[type1_attendances] + England[type2_attendances] + England[other_attendances] + England[type1_booked] + England[type2_booked] + England[other_booked])
+		formatString: #,0
+
+	measure 'England all A&E over four hours' = SUMX(England, England[type1_over4hrs] + England[type2_over4hrs] + England[other_over4hrs] + England[type1_booked_over4hrs] + England[type2_booked_over4hrs] + England[other_booked_over4hrs])
+		formatString: #,0
+
+	measure 'England all A&E within four hours' = DIVIDE([England all A&E attendances] - [England all A&E over four hours], [England all A&E attendances])
+		formatString: 0.00%
+
+	measure 'England gap to 95% standard (pp)' = VAR rate = [England all A&E within four hours] RETURN IF(NOT ISBLANK(rate), 100 * (rate - 0.95))
+		formatString: 0.00
+
+	measure 'England admissions via A&E' = SUMX(England, England[type1_admissions] + England[type2_admissions] + England[other_ae_admissions])
+		formatString: #,0
+
+	measure 'England A&E admission conversion' = DIVIDE([England admissions via A&E], [England all A&E attendances])
+		formatString: 0.00%
+
+
+	measure 'Provider reporting keys' = DISTINCTCOUNT(Organisation[provider_key])
+		formatString: #,0
+
+	measure 'Complete 24-month keys' = COUNTROWS(FILTER(VALUES(Organisation[provider_key]), [Reported months] = 24))
+		formatString: #,0
+
+	measure 'Missing key-month combinations' = SUMX(VALUES(Organisation[provider_key]), 24 - [Reported months])
+		formatString: #,0
+
+	measure 'Positive Type 1 months' = CALCULATE([Reported months], Provider[type1_attendances] > 0)
+		formatString: #,0
+
+	measure 'Reported names' = DISTINCTCOUNT(Provider[org_name])
+		formatString: #,0
+
+
+	column reporting_month
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 67fb2b57-5cc7-4850-b9d8-6ab699636870
+		summarizeBy: none
+		sourceColumn: reporting_month
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column provider_key
+		dataType: string
+		isHidden
+		lineageTag: 2e5edde5-4cad-4491-8cc3-51cc61742259
+		summarizeBy: none
+		sourceColumn: provider_key
+
+	column type1_attendances
+		dataType: int64
+		isHidden
+		lineageTag: b8800bb6-baf0-4c60-af61-392efe0766cb
+		summarizeBy: none
+		sourceColumn: type1_attendances
+
+	column type2_attendances
+		dataType: int64
+		isHidden
+		lineageTag: b1e30e4f-616e-49ee-a183-53647a125d9f
+		summarizeBy: none
+		sourceColumn: type2_attendances
+
+	column other_attendances
+		dataType: int64
+		isHidden
+		lineageTag: 032c3f25-a412-4631-b4cd-be8c81ef30bf
+		summarizeBy: none
+		sourceColumn: other_attendances
+
+	column type1_over4hrs
+		dataType: int64
+		isHidden
+		lineageTag: 88b84b2e-c112-4ee6-aa19-1c80f8613c86
+		summarizeBy: none
+		sourceColumn: type1_over4hrs
+
+	column type2_over4hrs
+		dataType: int64
+		isHidden
+		lineageTag: 9b030d14-4c7a-40c5-a266-0f2e6daba941
+		summarizeBy: none
+		sourceColumn: type2_over4hrs
+
+	column other_over4hrs
+		dataType: int64
+		isHidden
+		lineageTag: 99c4861e-7c11-4548-8680-92cfb59cb723
+		summarizeBy: none
+		sourceColumn: other_over4hrs
+
+	column type1_booked
+		dataType: int64
+		isHidden
+		lineageTag: adfd4ebf-963d-4886-968f-79a754df63ac
+		summarizeBy: none
+		sourceColumn: type1_booked
+
+	column type1_booked_over4hrs
+		dataType: int64
+		isHidden
+		lineageTag: 5952291c-31e1-49e7-a2ad-b0ffc190a9bd
+		summarizeBy: none
+		sourceColumn: type1_booked_over4hrs
+
+	column dta_4_to_12hrs
+		dataType: int64
+		isHidden
+		lineageTag: 23b74795-426c-4de3-a1e6-972d9dbd43a6
+		summarizeBy: none
+		sourceColumn: dta_4_to_12hrs
+
+	column dta_12plus_hrs
+		dataType: int64
+		isHidden
+		lineageTag: 79495423-55a0-4fa5-a544-4401ffdb19c1
+		summarizeBy: none
+		sourceColumn: dta_12plus_hrs
+
+	column type1_admissions
+		dataType: int64
+		isHidden
+		lineageTag: c7993e33-aac2-4fb0-befb-12a05eeec2d8
+		summarizeBy: none
+		sourceColumn: type1_admissions
+
+	column org_code
+		dataType: string
+		lineageTag: c837919e-3fcd-4ae8-a750-02e1e8d53756
+		summarizeBy: none
+		sourceColumn: org_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_name
+		dataType: string
+		lineageTag: 350e0d83-7ad5-4f87-89be-5cecbe75b72f
+		summarizeBy: none
+		sourceColumn: org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Provider = m
+		mode: import
+		source = Table.SelectRows(Snapshot, each [org_code] <> "TOTAL")
+

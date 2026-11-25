@@ -1,0 +1,12 @@
+relationship ProviderMonth
+	fromColumn: Provider.reporting_month
+	toColumn: Period.'Month start'
+
+relationship EnglandMonth
+	fromColumn: England.reporting_month
+	toColumn: Period.'Month start'
+
+relationship ProviderOrganisation
+	fromColumn: Provider.provider_key
+	toColumn: Organisation.provider_key
+

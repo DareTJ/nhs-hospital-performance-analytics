@@ -1,0 +1,146 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "00000000000000000069",
+  "displayName": "Patient Flow & Admissions",
+  "displayOption": "FitToPage",
+  "height": 974,
+  "width": 1440,
+  "visualInteractions": [
+    {
+      "source": "0000000000000000c353",
+      "target": "0000000000000000c355",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c353",
+      "target": "0000000000000000c356",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c353",
+      "target": "0000000000000000c357",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c353",
+      "target": "0000000000000000c358",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c353",
+      "target": "0000000000000000c359",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c354",
+      "target": "0000000000000000c355",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c354",
+      "target": "0000000000000000c356",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c354",
+      "target": "0000000000000000c357",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c354",
+      "target": "0000000000000000c358",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c354",
+      "target": "0000000000000000c359",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000c358",
+      "target": "0000000000000000c353",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c358",
+      "target": "0000000000000000c354",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c358",
+      "target": "0000000000000000c355",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c358",
+      "target": "0000000000000000c356",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c358",
+      "target": "0000000000000000c357",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c358",
+      "target": "0000000000000000c359",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c359",
+      "target": "0000000000000000c353",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c359",
+      "target": "0000000000000000c354",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c359",
+      "target": "0000000000000000c355",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c359",
+      "target": "0000000000000000c356",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c359",
+      "target": "0000000000000000c357",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000c359",
+      "target": "0000000000000000c358",
+      "type": "NoFilter"
+    }
+  ],
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F5F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

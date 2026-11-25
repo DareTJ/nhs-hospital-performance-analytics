@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "0000000000000000006b",
+  "displayName": "Data Quality & Coverage",
+  "displayOption": "FitToPage",
+  "height": 974,
+  "width": 1440,
+  "visualInteractions": [
+    {
+      "source": "00000000000000001106",
+      "target": "00000000000000001103",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000001106",
+      "target": "00000000000000001104",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000001106",
+      "target": "00000000000000001105",
+      "type": "NoFilter"
+    }
+  ],
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F5F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

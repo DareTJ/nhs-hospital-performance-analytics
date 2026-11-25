@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "00000000000000009c4a",
+  "position": {
+    "x": 28,
+    "y": 893,
+    "z": 10000,
+    "width": 1384,
+    "height": 63,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Check reporting coverage and changes in provider scope before comparing rates. The gap is in percentage points against England for the selected months.",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "fontFamily": "Segoe UI",
+                      "color": "#425563"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

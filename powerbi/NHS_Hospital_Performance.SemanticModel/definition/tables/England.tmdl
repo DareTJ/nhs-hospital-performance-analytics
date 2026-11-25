@@ -1,0 +1,161 @@
+table England
+	isHidden
+	lineageTag: d3c39a1f-d7c8-4fef-8f06-76658d4f39ef
+
+	column reporting_month
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 49f29cc2-af3c-44d2-91f8-71969cc955ff
+		summarizeBy: none
+		sourceColumn: reporting_month
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column type1_attendances
+		dataType: int64
+		isHidden
+		lineageTag: 56495dfe-a78c-4221-bd94-99a9dbe5bd1e
+		summarizeBy: none
+		sourceColumn: type1_attendances
+
+	column type2_attendances
+		dataType: int64
+		isHidden
+		lineageTag: d3d209ba-582d-4598-8aac-44937ab16421
+		summarizeBy: none
+		sourceColumn: type2_attendances
+
+	column other_attendances
+		dataType: int64
+		isHidden
+		lineageTag: 6a1a70bf-9753-4d52-9cee-d8d110434108
+		summarizeBy: none
+		sourceColumn: other_attendances
+
+	column type1_over4hrs
+		dataType: int64
+		isHidden
+		lineageTag: 2a4990fa-84ad-46d3-b907-9323a80c1f7d
+		summarizeBy: none
+		sourceColumn: type1_over4hrs
+
+	column type2_over4hrs
+		dataType: int64
+		isHidden
+		lineageTag: b84cfd76-cd6c-4e9e-8767-69e9a6ffe4b1
+		summarizeBy: none
+		sourceColumn: type2_over4hrs
+
+	column other_over4hrs
+		dataType: int64
+		isHidden
+		lineageTag: 6df2355c-b4ef-45a4-b54b-8cabbbe45f16
+		summarizeBy: none
+		sourceColumn: other_over4hrs
+
+	column type1_booked
+		dataType: int64
+		isHidden
+		lineageTag: 9e885f82-0ecb-477d-a69a-d9ef68828675
+		summarizeBy: none
+		sourceColumn: type1_booked
+
+	column type1_booked_over4hrs
+		dataType: int64
+		isHidden
+		lineageTag: 578920e8-37f6-4319-ba30-4552b14de281
+		summarizeBy: none
+		sourceColumn: type1_booked_over4hrs
+
+	column dta_4_to_12hrs
+		dataType: int64
+		isHidden
+		lineageTag: adbc73b4-969c-4e08-b532-4e40519800a9
+		summarizeBy: none
+		sourceColumn: dta_4_to_12hrs
+
+	column dta_12plus_hrs
+		dataType: int64
+		isHidden
+		lineageTag: 67713910-c382-4d64-a982-93a91fbdc1f2
+		summarizeBy: none
+		sourceColumn: dta_12plus_hrs
+
+	column type1_admissions
+		dataType: int64
+		isHidden
+		lineageTag: f561e125-675f-4986-a920-4ebc1ffea228
+		summarizeBy: none
+		sourceColumn: type1_admissions
+
+	column provider_key
+		dataType: string
+		lineageTag: bf05ae71-26db-4541-96a7-f15be115cf32
+		summarizeBy: none
+		sourceColumn: provider_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_code
+		dataType: string
+		lineageTag: 66908640-9825-48dc-940f-a931757e981b
+		summarizeBy: none
+		sourceColumn: org_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_name
+		dataType: string
+		lineageTag: c8b781ff-d141-4263-a7a5-3509e767208a
+		summarizeBy: none
+		sourceColumn: org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column type2_booked
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: type2_booked
+
+	column other_booked
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: other_booked
+
+	column type2_booked_over4hrs
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: type2_booked_over4hrs
+
+	column other_booked_over4hrs
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: other_booked_over4hrs
+
+	column type2_admissions
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: type2_admissions
+
+	column other_ae_admissions
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: other_ae_admissions
+
+	column other_emergency_admissions
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: other_emergency_admissions
+
+	partition England = m
+		mode: import
+		source = Table.SelectRows(Snapshot, each [org_code] = "TOTAL")
+

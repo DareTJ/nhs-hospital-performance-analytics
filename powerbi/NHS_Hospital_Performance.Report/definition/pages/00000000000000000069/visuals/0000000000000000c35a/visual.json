@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "0000000000000000c35a",
+  "position": {
+    "x": 28,
+    "y": 893,
+    "z": 10000,
+    "width": 1384,
+    "height": 63,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The clock starts at the decision to admit. Daily rates use calendar days in months that reported. England recorded 44,951 waits of 12 hours or more in August 2026, up from 35,909 in August 2025.",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "fontFamily": "Segoe UI",
+                      "color": "#425563"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

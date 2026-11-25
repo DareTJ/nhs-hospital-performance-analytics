@@ -1,0 +1,126 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "00000000000000000065",
+  "displayName": "Executive Overview",
+  "displayOption": "FitToPage",
+  "height": 974,
+  "width": 1440,
+  "visualInteractions": [
+    {
+      "source": "00000000000000002713",
+      "target": "00000000000000002714",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000002713",
+      "target": "00000000000000002715",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000002713",
+      "target": "00000000000000002716",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000002713",
+      "target": "00000000000000002717",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000002713",
+      "target": "00000000000000002718",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000002713",
+      "target": "0000000000000000271a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "00000000000000002717",
+      "target": "00000000000000002713",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002717",
+      "target": "00000000000000002714",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002717",
+      "target": "00000000000000002715",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002717",
+      "target": "00000000000000002716",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002717",
+      "target": "00000000000000002718",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002717",
+      "target": "0000000000000000271a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002718",
+      "target": "00000000000000002713",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002718",
+      "target": "00000000000000002714",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002718",
+      "target": "00000000000000002715",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002718",
+      "target": "00000000000000002716",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002718",
+      "target": "00000000000000002717",
+      "type": "NoFilter"
+    },
+    {
+      "source": "00000000000000002718",
+      "target": "0000000000000000271a",
+      "type": "NoFilter"
+    }
+  ],
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F5F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

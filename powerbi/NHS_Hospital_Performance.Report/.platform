@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "NHS_Hospital_Performance"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7e798cf0-6378-47d6-b9f8-7c18de739ba5"
+  }
+}

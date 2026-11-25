@@ -1,0 +1,166 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "0000000000000000006a",
+  "displayName": "Provider Detail & Bristol",
+  "displayOption": "FitToPage",
+  "height": 974,
+  "width": 1440,
+  "visualInteractions": [
+    {
+      "source": "0000000000000000ea63",
+      "target": "0000000000000000ea65",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea63",
+      "target": "0000000000000000ea66",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea63",
+      "target": "0000000000000000ea67",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea63",
+      "target": "0000000000000000ea68",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea63",
+      "target": "0000000000000000ea69",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea63",
+      "target": "0000000000000000ea6a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea64",
+      "target": "0000000000000000ea65",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea64",
+      "target": "0000000000000000ea66",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea64",
+      "target": "0000000000000000ea67",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea64",
+      "target": "0000000000000000ea68",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea64",
+      "target": "0000000000000000ea69",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0000000000000000ea64",
+      "target": "0000000000000000ea6a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea69",
+      "target": "0000000000000000ea63",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea69",
+      "target": "0000000000000000ea64",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea69",
+      "target": "0000000000000000ea65",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea69",
+      "target": "0000000000000000ea66",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea69",
+      "target": "0000000000000000ea67",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea69",
+      "target": "0000000000000000ea68",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea69",
+      "target": "0000000000000000ea6a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea6a",
+      "target": "0000000000000000ea63",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea6a",
+      "target": "0000000000000000ea64",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea6a",
+      "target": "0000000000000000ea65",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea6a",
+      "target": "0000000000000000ea66",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea6a",
+      "target": "0000000000000000ea67",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea6a",
+      "target": "0000000000000000ea68",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0000000000000000ea6a",
+      "target": "0000000000000000ea69",
+      "type": "NoFilter"
+    }
+  ],
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F5F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

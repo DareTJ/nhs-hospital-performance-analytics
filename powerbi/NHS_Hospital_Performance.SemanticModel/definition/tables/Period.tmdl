@@ -1,0 +1,29 @@
+table Period
+	lineageTag: 841595a2-2b0a-4090-b3e1-66984d38e447
+
+	column 'Month start'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 59f2b51f-f0b3-4416-84bc-b4c8f49512ec
+		summarizeBy: none
+		sourceColumn: Month start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Month
+		dataType: string
+		lineageTag: 9ea3521c-ad29-4d36-a056-2e136e1d2ba1
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Month start'
+
+	partition Period = m
+		mode: import
+		source =
+				let
+				    Dates = Table.RenameColumns(Table.Distinct(Table.SelectColumns(Snapshot, {"reporting_month"})), {{"reporting_month", "Month start"}}),
+				    Labels = Table.AddColumn(Dates, "Month", each Date.ToText([Month start], "MMM yyyy", "en-GB"), type text)
+				in
+				    Labels
+

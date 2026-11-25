@@ -1,0 +1,20 @@
+expression SnapshotPath = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 6924ebbd-501d-4597-a597-ca88ff8d9d63
+
+	annotation PBI_ResultType = Text
+
+expression Snapshot =
+		let
+		    Source = if (SqlServerName ?? "") <> "" then null else Csv.Document(File.Contents(SnapshotPath), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+		    Headers = if (SqlServerName ?? "") = "" then Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+		        else Sql.Database(SqlServerName, "NHSHealthcareAnalytics"){[Schema="analytics", Item="vw_ae_reporting_monthly"]}[Data],
+		    Typed = Table.TransformColumnTypes(Headers, {{"reporting_month", type date}, {"type1_attendances", Int64.Type}, {"type2_attendances", Int64.Type}, {"other_attendances", Int64.Type}, {"type1_over4hrs", Int64.Type}, {"type2_over4hrs", Int64.Type}, {"other_over4hrs", Int64.Type}, {"type1_booked", Int64.Type}, {"type1_booked_over4hrs", Int64.Type}, {"dta_4_to_12hrs", Int64.Type}, {"dta_12plus_hrs", Int64.Type}, {"type1_admissions", Int64.Type}, {"type2_booked", Int64.Type}, {"other_booked", Int64.Type}, {"type2_booked_over4hrs", Int64.Type}, {"other_booked_over4hrs", Int64.Type}, {"type2_admissions", Int64.Type}, {"other_ae_admissions", Int64.Type}, {"other_emergency_admissions", Int64.Type}}, "en-GB"),
+		    Portfolio = Table.SelectRows(Typed, each [reporting_month] >= #date(2024, 9, 1) and [reporting_month] <= #date(2026, 8, 1))
+		in
+		    Portfolio
+	lineageTag: 1c402586-b19f-4560-9ad7-c8edb5d59d5d
+
+
+expression SqlServerName = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
+
+	annotation PBI_ResultType = Text
